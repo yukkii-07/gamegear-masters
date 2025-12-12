@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="【2024年最新】ゲーミングモニターおすすめランキング。144Hz/240Hz/360Hz対応モデル、応答速度1ms以下を徹底比較。">
-    <title>【2024年最新】ゲーミングモニターおすすめランキング | GameGear Masters</title>
+    <meta name="description" content="【2025年最新】ゲーミングモニターおすすめランキング。360Hz OLED、144-240Hz、4K対応モデルを徹底比較。応答速度0.03ms実現。">
+    <title>【2025年最新】ゲーミングモニターおすすめランキング | GameGear Masters</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
@@ -12,6 +12,16 @@
         body { font-family: 'Noto Sans JP', sans-serif; }
         .font-gaming { font-family: 'Orbitron', sans-serif; }
         .gradient-gaming { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(17, 153, 142, 0.4); }
+        .rank-badge {
+            position: absolute; top: -15px; left: -15px; width: 60px; height: 60px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.4); z-index: 10;
+        }
+        .rank-1 { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); }
+        .rank-2 { background: linear-gradient(135deg, #C0C0C0 0%, #808080 100%); }
+        .rank-3 { background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%); }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-100">
@@ -27,14 +37,10 @@
                 </div>
                 <button id="mobile-menu-button" class="md:hidden text-gray-300" aria-label="メニュー">
                     <i class="fas fa-bars text-2xl"></i>
-                    <i class="fas fa-times text-2xl hidden"></i>
                 </button>
             </div>
             <div id="mobile-menu" class="hidden md:hidden pb-4">
-                <div class="flex flex-col space-y-2">
-                    <a href="index.html" class="text-gray-300 hover:text-green-400 transition px-4 py-2">ホーム</a>
-                    <a href="index.html#categories" class="text-gray-300 hover:text-green-400 transition px-4 py-2">カテゴリー</a>
-                </div>
+                <a href="index.html" class="block text-gray-300 hover:text-green-400 transition px-4 py-2">ホーム</a>
             </div>
         </div>
     </nav>
@@ -42,149 +48,343 @@
     <section class="pt-24 pb-12 gradient-gaming">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
-                <i class="fas fa-desktop mr-3"></i>ゲーミングモニター ランキング2024
+                <i class="fas fa-desktop mr-3"></i>ゲーミングモニター ランキング2025
             </h1>
-            <p class="text-xl text-white/90">144Hz/240Hz/360Hz・応答速度1ms以下モデルを徹底比較</p>
+            <p class="text-xl text-white/90">360Hz OLED・144-240Hz・4K対応モデル徹底比較</p>
+            <p class="text-sm text-white/70 mt-2">最終更新: 2025年12月12日</p>
         </div>
     </section>
 
-    <section class="py-16 bg-gray-900">
+    <section class="py-12 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gray-800 rounded-xl p-8 border border-green-500/30">
+                <h2 class="text-2xl font-bold mb-4 text-green-400">
+                    <i class="fas fa-info-circle mr-2"></i>2025年ゲーミングモニタートレンド
+                </h2>
+                <p class="text-gray-300 mb-4 leading-relaxed">
+                    2025年は<strong class="text-green-400">360Hz OLED</strong>が最高峰に到達。応答速度0.03msを実現し、
+                    従来のTNパネルを超える性能を達成しました。144-180Hz FHDモニターがコスパ最強ゾーンとして確立し、
+                    4K×144Hzも¥7万円台まで価格低下。プロ競技向けとカジュアルゲーマー向けの二極化が進行中です。
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                    <div class="bg-gray-900 p-4 rounded-lg">
+                        <div class="text-green-400 text-2xl mb-2"><i class="fas fa-bolt"></i></div>
+                        <h3 class="font-bold mb-1">360Hz OLED</h3>
+                        <p class="text-sm text-gray-400">0.03ms応答速度。プロ競技最高峰</p>
+                    </div>
+                    <div class="bg-gray-900 p-4 rounded-lg">
+                        <div class="text-green-400 text-2xl mb-2"><i class="fas fa-coins"></i></div>
+                        <h3 class="font-bold mb-1">144Hz FHD</h3>
+                        <p class="text-sm text-gray-400">¥3-5万円。コスパ最強ゾーン</p>
+                    </div>
+                    <div class="bg-gray-900 p-4 rounded-lg">
+                        <div class="text-green-400 text-2xl mb-2"><i class="fas fa-film"></i></div>
+                        <h3 class="font-bold mb-1">4K 144Hz</h3>
+                        <p class="text-sm text-gray-400">映像美×速度両立。価格低下中</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ranking" class="py-16 bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl font-bold text-center mb-12 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">
-                おすすめランキング TOP10
+                <i class="fas fa-trophy mr-3"></i>おすすめランキング TOP10
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-gray-800 rounded-xl p-6 border-2 border-yellow-500">
-                    <div class="bg-yellow-500 text-gray-900 w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-4">1</div>
-                    <h3 class="text-2xl font-bold mb-2">BenQ ZOWIE XL2546X</h3>
-                    <p class="text-gray-400 mb-4">FPSプロ使用率No.1 240Hzモニター</p>
-                    <div class="space-y-2 mb-4 text-sm">
-                        <div class="flex justify-between"><span class="text-gray-500">サイズ</span><span class="font-bold">24.5インチ</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">リフレッシュレート</span><span class="font-bold text-green-400">240Hz</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">応答速度</span><span class="font-bold">0.5ms</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">パネル</span><span class="font-bold">TN（視野角より速度重視）</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">価格</span><span class="font-bold text-green-400">¥58,800</span></div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <!-- 1位 -->
+                <div class="bg-gray-800 rounded-xl p-6 relative border-4 border-yellow-500 card-hover">
+                    <div class="rank-badge rank-1">1</div>
+                    <div class="pt-8">
+                        <span class="bg-yellow-500 text-gray-900 px-3 py-1 rounded-full text-xs font-bold mb-4 inline-block">OLED最高峰</span>
+                        <h3 class="text-2xl font-bold mb-2">MSI MAG-271QPX-QD-OLED</h3>
+                        <p class="text-gray-400 mb-4">360Hz×OLED×0.03ms</p>
+                        <div class="space-y-2 mb-4 text-sm">
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-500">サイズ</span><span class="font-bold">27型 WQHD</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-500">リフレッシュレート</span><span class="font-bold text-green-400">360Hz</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-500">応答速度</span><span class="font-bold text-green-400">0.03ms</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-500">パネル</span><span class="font-bold text-purple-400">QD-OLED</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-500">価格</span><span class="font-bold text-yellow-400">¥87,920〜¥149,105</span>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <h4 class="font-bold text-sm mb-2 text-green-400">おすすめポイント</h4>
+                            <ul class="text-sm text-gray-300 space-y-1">
+                                <li>✓ 360Hz×OLED究極スペック</li>
+                                <li>✓ 0.03ms最速応答速度</li>
+                                <li>✓ 完全な黒表現可能</li>
+                                <li>✓ プロ競技向け最高峰</li>
+                            </ul>
+                        </div>
+                        <div class="space-y-2">
+                            <a href="https://www.amazon.co.jp/" target="_blank" class="block w-full bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-bold py-3 rounded-lg text-center transition">
+                                <i class="fab fa-amazon mr-2"></i>Amazonで見る
+                            </a>
+                        </div>
                     </div>
-                    <p class="text-sm text-gray-300 mb-4">DyAc⁺技術で残像感を大幅軽減。CS2、Valorantプロシーンで圧倒的シェア。</p>
-                    <a href="#" class="block w-full bg-yellow-500 hover:bg-yellow-400 text-gray-900 font-bold py-3 rounded-lg text-center transition">
-                        <i class="fab fa-amazon mr-2"></i>詳細を見る
-                    </a>
                 </div>
 
-                <div class="bg-gray-800 rounded-xl p-6 border border-green-500/30">
-                    <div class="bg-gray-600 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-4">2</div>
-                    <h3 class="text-2xl font-bold mb-2">ASUS ROG Swift OLED PG27AQDM</h3>
-                    <p class="text-gray-400 mb-4">360Hz OLED・最高画質＋速度</p>
-                    <div class="space-y-2 mb-4 text-sm">
-                        <div class="flex justify-between"><span class="text-gray-500">サイズ</span><span class="font-bold">27インチ</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">リフレッシュレート</span><span class="font-bold text-purple-400">360Hz</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">応答速度</span><span class="font-bold">0.03ms（OLED）</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">パネル</span><span class="font-bold">OLED（完全な黒表現）</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">価格</span><span class="font-bold text-yellow-400">¥149,800</span></div>
+                <!-- 2位 -->
+                <div class="bg-gray-800 rounded-xl p-6 relative border-2 border-gray-400 card-hover">
+                    <div class="rank-badge rank-2">2</div>
+                    <div class="pt-8">
+                        <span class="bg-blue-600 text-white px-3 py-1 rounded-full text-xs font-bold mb-4 inline-block">360Hz OLED</span>
+                        <h3 class="text-2xl font-bold mb-2">Dell Alienware AW2725DF</h3>
+                        <p class="text-gray-400 mb-4">27型 QHD 360Hz</p>
+                        <div class="space-y-2 mb-4 text-sm">
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-500">サイズ</span><span class="font-bold">27型 QHD</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-500">リフレッシュレート</span><span class="font-bold text-green-400">360Hz</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-500">対応技術</span><span class="font-bold">G-SYNC/FreeSync</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-500">価格</span><span class="font-bold text-yellow-400">¥65,981〜¥139,800</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-4">Alienwareブランド。G-SYNC/FreeSync両対応で汎用性高</p>
+                        <a href="https://www.amazon.co.jp/" target="_blank" class="block w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-lg text-center transition">Amazonで見る</a>
                     </div>
-                    <p class="text-sm text-gray-300 mb-4">360Hz＋OLED。究極の映像美と速度を両立したフラッグシップモデル。</p>
-                    <a href="#" class="block w-full bg-green-600 hover:bg-green-500 text-white font-bold py-2 rounded-lg text-center transition">詳細を見る</a>
                 </div>
 
-                <div class="bg-gray-800 rounded-xl p-6 border border-green-500/30">
-                    <div class="bg-orange-700 text-white w-12 h-12 rounded-full flex items-center justify-center font-bold text-xl mb-4">3</div>
-                    <h3 class="text-2xl font-bold mb-2">LG UltraGear 27GR95QE-B</h3>
-                    <p class="text-gray-400 mb-4">240Hz OLED・コスパ重視</p>
-                    <div class="space-y-2 mb-4 text-sm">
-                        <div class="flex justify-between"><span class="text-gray-500">サイズ</span><span class="font-bold">27インチ WQHD</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">リフレッシュレート</span><span class="font-bold text-green-400">240Hz</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">応答速度</span><span class="font-bold">0.03ms</span></div>
-                        <div class="flex justify-between"><span class="text-gray-500">価格</span><span class="font-bold text-green-400">¥98,800</span></div>
+                <!-- 3位 -->
+                <div class="bg-gray-800 rounded-xl p-6 relative border-2 border-orange-700 card-hover">
+                    <div class="rank-badge rank-3">3</div>
+                    <div class="pt-8">
+                        <span class="bg-orange-600 text-white px-3 py-1 rounded-full text-xs font-bold mb-4 inline-block">FPS特化</span>
+                        <h3 class="text-2xl font-bold mb-2">BenQ ZOWIE XL2540X+</h3>
+                        <p class="text-gray-400 mb-4">280Hz TNパネル</p>
+                        <div class="space-y-2 mb-4 text-sm">
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-500">サイズ</span><span class="font-bold">24.5型 FHD</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-500">リフレッシュレート</span><span class="font-bold text-orange-400">280Hz</span>
+                            </div>
+                            <div class="flex justify-between border-b border-gray-700 pb-2">
+                                <span class="text-gray-500">応答速度</span><span class="font-bold">0.5ms</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-500">価格</span><span class="font-bold text-yellow-400">高価格帯</span>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-300 mb-4">DyAc⁺技術。CS2・Valorantプロシーンで圧倒的シェア</p>
+                        <a href="https://www.amazon.co.jp/" target="_blank" class="block w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 rounded-lg text-center transition">Amazonで見る</a>
                     </div>
-                    <p class="text-sm text-gray-300 mb-4">OLEDで10万円以下。240Hz対応でFPS・映像鑑賞両方に最適。</p>
-                    <a href="#" class="block w-full bg-green-600 hover:bg-green-500 text-white font-bold py-2 rounded-lg text-center transition">詳細を見る</a>
-                </div>
-
-                <div class="bg-gray-800 rounded-xl p-6 border border-green-500/30">
-                    <div class="text-3xl font-bold text-green-400 mb-2">4位</div>
-                    <h3 class="text-xl font-bold">Dell Alienware AW2724HF</h3>
-                    <p class="text-sm text-gray-400 mb-2">360Hz・24.5インチFast IPS</p>
-                    <div class="text-green-400 font-bold mb-2">¥52,800</div>
-                    <p class="text-sm text-gray-300">360Hzで5万円台。コスパ抜群のFPS向けモデル。</p>
-                </div>
-
-                <div class="bg-gray-800 rounded-xl p-6 border border-green-500/30">
-                    <div class="text-3xl font-bold text-green-400 mb-2">5位</div>
-                    <h3 class="text-xl font-bold">MSI MAG 274UPF</h3>
-                    <p class="text-sm text-gray-400 mb-2">4K 144Hz・27インチ高画質</p>
-                    <div class="text-green-400 font-bold mb-2">¥68,800</div>
-                    <p class="text-sm text-gray-300">4K解像度で144Hz。RPG・映像鑑賞にも最適。</p>
-                </div>
-
-                <div class="bg-gray-800 rounded-xl p-6 border border-green-500/30">
-                    <div class="text-3xl font-bold text-green-400 mb-2">6位</div>
-                    <h3 class="text-xl font-bold">Pixio PX259 Prime</h3>
-                    <p class="text-sm text-gray-400 mb-2">280Hz・エントリー向け最適</p>
-                    <div class="text-green-400 font-bold mb-2">¥29,800</div>
-                    <p class="text-sm text-gray-300">3万円以下で280Hz。初心者に最適なコスパモデル。</p>
                 </div>
             </div>
 
-            <div class="mt-12 bg-gray-800 rounded-xl p-8 border border-green-500/30">
-                <h3 class="text-2xl font-bold mb-6">7位〜10位</h3>
+            <!-- 4-10位 -->
+            <div class="bg-gray-800 rounded-xl p-8 mb-8 border border-green-500/30">
+                <h3 class="text-2xl font-bold mb-6 text-green-400">4位〜10位</h3>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="bg-gray-900 p-4 rounded-lg flex justify-between items-center">
-                        <div><span class="text-2xl font-bold text-green-400 mr-4">7</span><span class="font-bold">GIGABYTE M27Q X</span></div>
-                        <span class="text-green-400 font-bold">¥46,800</span>
+                    <div class="bg-gray-900 p-5 rounded-lg hover:bg-gray-850 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center">
+                                <span class="text-3xl font-bold text-green-400 mr-4">4</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">Pixio PX278 WAVE</h4>
+                                    <p class="text-sm text-gray-400">27型 FHD 240Hz Fast IPS</p>
+                                </div>
+                            </div>
+                            <span class="text-yellow-400 font-bold">中価格</span>
+                        </div>
+                        <p class="text-sm text-gray-300 ml-12">バランス型。汎用性重視</p>
                     </div>
-                    <div class="bg-gray-900 p-4 rounded-lg flex justify-between items-center">
-                        <div><span class="text-2xl font-bold text-green-400 mr-4">8</span><span class="font-bold">AOC AG254FG</span></div>
-                        <span class="text-green-400 font-bold">¥42,800</span>
+
+                    <div class="bg-gray-900 p-5 rounded-lg hover:bg-gray-850 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center">
+                                <span class="text-3xl font-bold text-green-400 mr-4">5</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">LG REGZA RM-G276N</h4>
+                                    <p class="text-sm text-gray-400">27型 FHD 180Hz IPS</p>
+                                </div>
+                            </div>
+                            <span class="text-yellow-400 font-bold">中価格</span>
+                        </div>
+                        <p class="text-sm text-gray-300 ml-12">LGパネル。汎用向け</p>
                     </div>
-                    <div class="bg-gray-900 p-4 rounded-lg flex justify-between items-center">
-                        <div><span class="text-2xl font-bold text-green-400 mr-4">9</span><span class="font-bold">ViewSonic XG2431</span></div>
-                        <span class="text-green-400 font-bold">¥35,800</span>
+
+                    <div class="bg-gray-900 p-5 rounded-lg hover:bg-gray-850 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center">
+                                <span class="text-3xl font-bold text-green-400 mr-4">6</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">ASUS ROG Strix XG27ACMG</h4>
+                                    <p class="text-sm text-gray-400">27型 4K 160Hz HDR</p>
+                                </div>
+                            </div>
+                            <span class="text-orange-400 font-bold">中〜高</span>
+                        </div>
+                        <p class="text-sm text-gray-300 ml-12">4K高画質。映像美重視</p>
                     </div>
-                    <div class="bg-gray-900 p-4 rounded-lg flex justify-between items-center">
-                        <div><span class="text-2xl font-bold text-green-400 mr-4">10</span><span class="font-bold">Acer Nitro XV252QF</span></div>
-                        <span class="text-green-400 font-bold">¥32,800</span>
+
+                    <div class="bg-gray-900 p-5 rounded-lg hover:bg-gray-850 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center">
+                                <span class="text-3xl font-bold text-green-400 mr-4">7</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">JAPANNEXT JN-IPS2704FHDR-144</h4>
+                                    <p class="text-sm text-gray-400">27型 FHD 144Hz</p>
+                                </div>
+                            </div>
+                            <span class="text-green-400 font-bold">低価格</span>
+                        </div>
+                        <p class="text-sm text-gray-300 ml-12">国産。コスパ最強</p>
+                    </div>
+
+                    <div class="bg-gray-900 p-5 rounded-lg hover:bg-gray-850 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center">
+                                <span class="text-3xl font-bold text-green-400 mr-4">8</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">I-O DATA GigaCrysta EX-LDGC242HTB</h4>
+                                    <p class="text-sm text-gray-400">23.8型 FHD 144Hz</p>
+                                </div>
+                            </div>
+                            <span class="text-green-400 font-bold">低〜中</span>
+                        </div>
+                        <p class="text-sm text-gray-300 ml-12">日本メーカー。サポート充実</p>
+                    </div>
+
+                    <div class="bg-gray-900 p-5 rounded-lg hover:bg-gray-850 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center">
+                                <span class="text-3xl font-bold text-green-400 mr-4">9</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">Xiaomi G27i</h4>
+                                    <p class="text-sm text-gray-400">27型 FHD 144Hz</p>
+                                </div>
+                            </div>
+                            <span class="text-green-400 font-bold">低価格</span>
+                        </div>
+                        <p class="text-sm text-gray-300 ml-12">超コスパ。初心者最適</p>
+                    </div>
+
+                    <div class="bg-gray-900 p-5 rounded-lg hover:bg-gray-850 transition">
+                        <div class="flex justify-between items-start mb-2">
+                            <div class="flex items-center">
+                                <span class="text-3xl font-bold text-green-400 mr-4">10</span>
+                                <div>
+                                    <h4 class="font-bold text-lg">SONY INZONE M9</h4>
+                                    <p class="text-sm text-gray-400">27型 4K 144Hz</p>
+                                </div>
+                            </div>
+                            <span class="text-orange-400 font-bold">高価格</span>
+                        </div>
+                        <p class="text-sm text-gray-300 ml-12">PS5最適化。純正優位性</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-16 bg-gray-800">
+    <!-- 選び方ガイド -->
+    <section id="guide" class="py-16 bg-gray-800">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">選び方ガイド</h2>
-            <div class="space-y-6">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-400">
+                <i class="fas fa-book mr-3"></i>ゲーミングモニターの選び方
+            </h2>
+            <div class="space-y-8">
                 <div class="bg-gray-900 rounded-xl p-6">
-                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-tachometer-alt text-green-400 mr-2"></i>リフレッシュレートで選ぶ</h3>
-                    <div class="space-y-2 text-sm text-gray-300">
-                        <p><strong class="text-green-400">144Hz：</strong>エントリー向け。60Hzから劇的に滑らか。2〜3万円台。</p>
-                        <p><strong class="text-green-400">240Hz：</strong>本格FPS向け。プロゲーマー標準。5〜6万円台。</p>
-                        <p><strong class="text-green-400">360Hz：</strong>競技レベル。トップランカー向け。ハイエンドPC必須。</p>
+                    <h3 class="text-xl font-bold mb-4 text-green-400">
+                        <i class="fas fa-tachometer-alt mr-2"></i>1. リフレッシュレートで選ぶ
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-blue-400">144-180Hz</h4>
+                            <p class="text-sm text-gray-300">コスパ最強。初心者〜中級者向け</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg border-2 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">240Hz</h4>
+                            <p class="text-sm text-gray-300">FPS競技標準。中〜上級者</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg border-2 border-purple-500">
+                            <h4 class="font-bold mb-2 text-purple-400">360Hz</h4>
+                            <p class="text-sm text-gray-300">プロ競技最高峰。超上級者</p>
+                        </div>
                     </div>
                 </div>
+
                 <div class="bg-gray-900 rounded-xl p-6">
-                    <h3 class="text-xl font-bold mb-4"><i class="fas fa-ruler text-green-400 mr-2"></i>サイズで選ぶ</h3>
-                    <div class="space-y-2 text-sm text-gray-300">
-                        <p><strong class="text-green-400">24〜25インチ：</strong>FPS向け。画面全体を視野に収めやすい。</p>
-                        <p><strong class="text-green-400">27インチ：</strong>万能サイズ。RPG・映像鑑賞にも最適。</p>
-                        <p><strong class="text-green-400">32インチ以上：</strong>没入感重視。4K推奨。</p>
+                    <h3 class="text-xl font-bold mb-4 text-green-400">
+                        <i class="fas fa-film mr-2"></i>2. 解像度で選ぶ
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="bg-gray-800 p-4 rounded-lg border-2 border-green-500">
+                            <h4 class="font-bold mb-2 text-green-400">FHD (1920×1080)</h4>
+                            <p class="text-sm text-gray-300">FPS/eSports標準。フレームレート重視</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-yellow-400">WQHD (2560×1440)</h4>
+                            <p class="text-sm text-gray-300">画質×性能バランス型</p>
+                        </div>
+                        <div class="bg-gray-800 p-4 rounded-lg">
+                            <h4 class="font-bold mb-2 text-purple-400">4K (3840×2160)</h4>
+                            <p class="text-sm text-gray-300">RPG/映像鑑賞。高スペックPC必須</p>
+                        </div>
                     </div>
+                </div>
+
+                <div class="bg-gray-900 rounded-xl p-6">
+                    <h3 class="text-xl font-bold mb-4 text-green-400">
+                        <i class="fas fa-bolt mr-2"></i>3. 応答速度で選ぶ
+                    </h3>
+                    <p class="text-gray-300 mb-4">FPS/TPSプレイヤーは<strong class="text-green-400">1ms以下</strong>必須。OLED 0.03msが最速。</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 border-t border-green-500/30 py-12">
+    <!-- FAQ -->
+    <section class="py-16 bg-gray-900">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center mb-12 text-green-400">よくある質問</h2>
+            <div class="space-y-4">
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <h3 class="font-bold text-lg mb-2 text-green-400">Q. ゲーミングモニターの寿命は?</h3>
+                    <p class="text-gray-300">5〜10年程度。OLEDは焼き付きリスクありますが、通常使用なら問題なし。</p>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <h3 class="font-bold text-lg mb-2 text-green-400">Q. 144Hzと240Hzどちらがいい?</h3>
+                    <p class="text-gray-300">初心者は144Hz。上級者・プロ志向なら240Hz以上推奨。体感差は明確にあります。</p>
+                </div>
+                <div class="bg-gray-800 rounded-lg p-6">
+                    <h3 class="font-bold text-lg mb-2 text-green-400">Q. OLEDとIPSどちらがいい?</h3>
+                    <p class="text-gray-300">予算あればOLED（応答速度最速・映像美）。コスパ重視ならIPS。TNは視野角狭いが速度重視FPS向け。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 border-t border-green-500/30 py-12">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <a href="index.html" class="font-gaming text-xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent">GameGear Masters</a>
-            <p class="text-gray-500 text-sm mt-4">&copy; 2024 GameGear Masters</p>
+            <a href="index.html" class="font-gaming text-2xl font-bold bg-gradient-to-r from-green-400 to-emerald-400 bg-clip-text text-transparent inline-block mb-4">
+                <i class="fas fa-gamepad mr-2"></i>GameGear Masters
+            </a>
+            <p class="text-gray-500 text-sm mt-6">© 2025 GameGear Masters. 最終更新: 2025年12月12日</p>
         </div>
     </footer>
 
-    <button id="scroll-to-top" class="hidden fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white w-12 h-12 rounded-full items-center justify-center shadow-lg transition z-50" aria-label="トップへ戻る">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('mobile-menu-button')?.addEventListener('click', () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
 </body>
 </html>
