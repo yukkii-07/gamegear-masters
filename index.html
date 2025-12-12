@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ゲーミングデバイスの最新レビュー、ランキング、比較情報を提供。マウス、キーボード、ヘッドセット、モニターなど、プロゲーマーも使う高性能デバイスを徹底解説。">
+    <title>GameGear Masters - ゲーミングデバイス総合レビューサイト</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+        .font-gaming {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .gradient-gaming {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-gaming-alt {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        .gradient-dark {
+            background: linear-gradient(135deg, #434343 0%, #000000 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        .rank-badge {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        .rank-1 { background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); }
+        .rank-2 { background: linear-gradient(135deg, #C0C0C0 0%, #808080 100%); }
+        .rank-3 { background: linear-gradient(135deg, #CD7F32 0%, #8B4513 100%); }
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    
+    <!-- ナビゲーションバー -->
+    <nav class="fixed w-full bg-gray-900/95 backdrop-blur-sm z-50 border-b border-purple-500/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="font-gaming text-2xl font-bold gradient-gaming bg-clip-text text-transparent">
+                        <i class="fas fa-gamepad mr-2"></i>GameGear Masters
+                    </h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#" class="text-gray-300 hover:text-purple-400 transition">ホーム</a>
+                    <a href="#categories" class="text-gray-300 hover:text-purple-400 transition">カテゴリー</a>
+                    <a href="#rankings" class="text-gray-300 hover:text-purple-400 transition">ランキング</a>
+                    <a href="#reviews" class="text-gray-300 hover:text-purple-400 transition">レビュー</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden text-gray-300" aria-label="メニュー">
+                    <i class="fas fa-bars text-2xl"></i>
+                    <i class="fas fa-times text-2xl hidden"></i>
+                </button>
+            </div>
+            <!-- モバイルメニュー -->
+            <div id="mobile-menu" class="hidden md:hidden pb-4">
+                <div class="flex flex-col space-y-2">
+                    <a href="#" class="text-gray-300 hover:text-purple-400 transition px-4 py-2">ホーム</a>
+                    <a href="#categories" class="text-gray-300 hover:text-purple-400 transition px-4 py-2">カテゴリー</a>
+                    <a href="#rankings" class="text-gray-300 hover:text-purple-400 transition px-4 py-2">ランキング</a>
+                    <a href="#reviews" class="text-gray-300 hover:text-purple-400 transition px-4 py-2">レビュー</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section class="relative pt-24 pb-32 overflow-hidden">
+        <div class="absolute inset-0 hero-overlay"></div>
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-10 left-10 w-32 h-32 border-4 border-white rounded-full float-animation"></div>
+            <div class="absolute bottom-20 right-20 w-48 h-48 border-4 border-white rounded-lg float-animation" style="animation-delay: 1s;"></div>
+        </div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="font-gaming text-5xl md:text-7xl font-black mb-6 text-white drop-shadow-lg">
+                最強のゲーミングセットアップ
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto">
+                プロゲーマー愛用デバイスから最新ギアまで、徹底レビュー＆ランキングで紹介
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#rankings" class="px-8 py-4 bg-white text-purple-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition shadow-lg">
+                    <i class="fas fa-trophy mr-2"></i>ランキングを見る
+                </a>
+                <a href="#categories" class="px-8 py-4 bg-purple-600/30 backdrop-blur-sm border-2 border-white text-white rounded-lg font-bold text-lg hover:bg-purple-600/50 transition">
+                    <i class="fas fa-search mr-2"></i>カテゴリーから探す
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 統計セクション -->
+    <section class="bg-gray-800 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-purple-400 mb-2">200+</div>
+                    <div class="text-gray-400">レビュー商品数</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-purple-400 mb-2">50+</div>
+                    <div class="text-gray-400">ブランド掲載</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-purple-400 mb-2">毎週</div>
+                    <div class="text-gray-400">最新情報更新</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-purple-400 mb-2">100%</div>
+                    <div class="text-gray-400">実機検証済み</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- カテゴリーセクション -->
+    <section id="categories" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4">
+                <span class="gradient-gaming bg-clip-text text-transparent">デバイスカテゴリー</span>
+            </h2>
+            <p class="text-center text-gray-400 mb-12">あなたの最適なゲーミングギアを見つけよう</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- マウスカテゴリー -->
+                <a href="gaming-mouse.html" class="card-hover bg-gray-800 rounded-xl overflow-hidden border border-purple-500/30">
+                    <div class="gradient-gaming p-6 text-center">
+                        <i class="fas fa-mouse text-6xl text-white mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white">ゲーミングマウス</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">FPS/TPS向け軽量マウスから高DPI対応モデルまで</p>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><i class="fas fa-check text-purple-400 mr-2"></i>有線/無線モデル比較</li>
+                            <li><i class="fas fa-check text-purple-400 mr-2"></i>プロゲーマー使用率TOP10</li>
+                            <li><i class="fas fa-check text-purple-400 mr-2"></i>センサー性能ランキング</li>
+                        </ul>
+                        <div class="mt-6 text-purple-400 font-bold flex items-center justify-between">
+                            <span>詳細を見る</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- キーボードカテゴリー -->
+                <a href="gaming-keyboard.html" class="card-hover bg-gray-800 rounded-xl overflow-hidden border border-purple-500/30">
+                    <div class="gradient-gaming-alt p-6 text-center">
+                        <i class="fas fa-keyboard text-6xl text-white mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white">ゲーミングキーボード</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">メカニカル軸の種類とラピッドトリガー対応モデル</p>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><i class="fas fa-check text-pink-400 mr-2"></i>赤軸・青軸・茶軸徹底比較</li>
+                            <li><i class="fas fa-check text-pink-400 mr-2"></i>ラピッドトリガー搭載機種</li>
+                            <li><i class="fas fa-check text-pink-400 mr-2"></i>テンキーレス/フルサイズ</li>
+                        </ul>
+                        <div class="mt-6 text-pink-400 font-bold flex items-center justify-between">
+                            <span>詳細を見る</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- ヘッドセットカテゴリー -->
+                <a href="gaming-headset.html" class="card-hover bg-gray-800 rounded-xl overflow-hidden border border-purple-500/30">
+                    <div class="gradient-dark p-6 text-center">
+                        <i class="fas fa-headset text-6xl text-white mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white">ゲーミングヘッドセット</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">7.1chサラウンド対応・足音定位性能で選ぶ</p>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>FPS向け定位性能比較</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>有線/無線遅延テスト</li>
+                            <li><i class="fas fa-check text-blue-400 mr-2"></i>長時間装着の快適性</li>
+                        </ul>
+                        <div class="mt-6 text-blue-400 font-bold flex items-center justify-between">
+                            <span>詳細を見る</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- モニターカテゴリー -->
+                <a href="gaming-monitor.html" class="card-hover bg-gray-800 rounded-xl overflow-hidden border border-purple-500/30">
+                    <div style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);" class="p-6 text-center">
+                        <i class="fas fa-desktop text-6xl text-white mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white">ゲーミングモニター</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">144Hz/240Hz/360Hzリフレッシュレート比較</p>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>24/27インチサイズ別推奨</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>応答速度1ms以下モデル</li>
+                            <li><i class="fas fa-check text-green-400 mr-2"></i>G-SYNC/FreeSync対応</li>
+                        </ul>
+                        <div class="mt-6 text-green-400 font-bold flex items-center justify-between">
+                            <span>詳細を見る</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- チェアカテゴリー -->
+                <a href="gaming-chair.html" class="card-hover bg-gray-800 rounded-xl overflow-hidden border border-purple-500/30">
+                    <div style="background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);" class="p-6 text-center">
+                        <i class="fas fa-chair text-6xl text-white mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white">ゲーミングチェア</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">長時間プレイに最適なエルゴノミクス設計</p>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><i class="fas fa-check text-orange-400 mr-2"></i>AKRacing/DXRACER比較</li>
+                            <li><i class="fas fa-check text-orange-400 mr-2"></i>ランバーサポート重視</li>
+                            <li><i class="fas fa-check text-orange-400 mr-2"></i>リクライニング角度比較</li>
+                        </ul>
+                        <div class="mt-6 text-orange-400 font-bold flex items-center justify-between">
+                            <span>詳細を見る</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- マウスパッドカテゴリー -->
+                <a href="gaming-mousepad.html" class="card-hover bg-gray-800 rounded-xl overflow-hidden border border-purple-500/30">
+                    <div style="background: linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%);" class="p-6 text-center">
+                        <i class="fas fa-square text-6xl text-white mb-4"></i>
+                        <h3 class="text-2xl font-bold text-white">マウスパッド/デスクマット</h3>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-400 mb-4">滑りやすさと止めやすさのバランスで選ぶ</p>
+                        <ul class="space-y-2 text-sm text-gray-500">
+                            <li><i class="fas fa-check text-cyan-400 mr-2"></i>布製/ハード素材比較</li>
+                            <li><i class="fas fa-check text-cyan-400 mr-2"></i>XXLサイズデスクマット</li>
+                            <li><i class="fas fa-check text-cyan-400 mr-2"></i>RGB照明付きモデル</li>
+                        </ul>
+                        <div class="mt-6 text-cyan-400 font-bold flex items-center justify-between">
+                            <span>詳細を見る</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 総合ランキングセクション -->
+    <section id="rankings" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4">
+                <span class="gradient-gaming bg-clip-text text-transparent">
+                    <i class="fas fa-trophy mr-2"></i>今週の総合ランキング
+                </span>
+            </h2>
+            <p class="text-center text-gray-400 mb-12">最も注目されているゲーミングデバイスTOP6</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- ランキング1位 -->
+                <div class="relative card-hover bg-gray-900 rounded-xl p-6 border-2 border-yellow-500">
+                    <div class="rank-badge rank-1">1</div>
+                    <div class="text-center mb-4">
+                        <div class="bg-gray-800 rounded-lg p-4 mb-4">
+                            <i class="fas fa-mouse text-6xl text-purple-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Logicool G PRO X SUPERLIGHT 2</h3>
+                        <p class="text-sm text-gray-400 mb-4">ゲーミングマウス</p>
+                    </div>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">重量</span>
+                            <span class="font-bold text-yellow-400">60g（超軽量）</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">センサー</span>
+                            <span class="font-bold">HERO 2</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">接続</span>
+                            <span class="font-bold">無線</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">価格帯</span>
+                            <span class="font-bold text-green-400">¥20,000～</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="ml-2 text-sm">5.0</span>
+                        </div>
+                        <span class="text-xs text-gray-500">2,847件</span>
+                    </div>
+                    <a href="gaming-mouse.html#rank1" class="block w-full bg-yellow-500 text-gray-900 text-center py-3 rounded-lg font-bold hover:bg-yellow-400 transition">
+                        詳細レビューを見る
+                    </a>
+                </div>
+
+                <!-- ランキング2位 -->
+                <div class="relative card-hover bg-gray-900 rounded-xl p-6 border-2 border-gray-400">
+                    <div class="rank-badge rank-2">2</div>
+                    <div class="text-center mb-4">
+                        <div class="bg-gray-800 rounded-lg p-4 mb-4">
+                            <i class="fas fa-keyboard text-6xl text-pink-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Corsair K70 PRO TKL</h3>
+                        <p class="text-sm text-gray-400 mb-4">ゲーミングキーボード</p>
+                    </div>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">キースイッチ</span>
+                            <span class="font-bold text-pink-400">ラピッドトリガー</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">サイズ</span>
+                            <span class="font-bold">テンキーレス</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">ポーリングレート</span>
+                            <span class="font-bold">8000Hz</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">価格帯</span>
+                            <span class="font-bold text-green-400">¥25,000～</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="ml-2 text-sm">4.9</span>
+                        </div>
+                        <span class="text-xs text-gray-500">1,523件</span>
+                    </div>
+                    <a href="gaming-keyboard.html#rank1" class="block w-full bg-gray-400 text-gray-900 text-center py-3 rounded-lg font-bold hover:bg-gray-300 transition">
+                        詳細レビューを見る
+                    </a>
+                </div>
+
+                <!-- ランキング3位 -->
+                <div class="relative card-hover bg-gray-900 rounded-xl p-6 border-2 border-orange-700">
+                    <div class="rank-badge rank-3">3</div>
+                    <div class="text-center mb-4">
+                        <div class="bg-gray-800 rounded-lg p-4 mb-4">
+                            <i class="fas fa-headset text-6xl text-blue-400"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">SteelSeries Arctis Nova Pro</h3>
+                        <p class="text-sm text-gray-400 mb-4">ゲーミングヘッドセット</p>
+                    </div>
+                    <div class="space-y-3 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">サラウンド</span>
+                            <span class="font-bold text-blue-400">360°空間オーディオ</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">接続</span>
+                            <span class="font-bold">無線/有線両対応</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">バッテリー</span>
+                            <span class="font-bold">22時間</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-400">価格帯</span>
+                            <span class="font-bold text-green-400">¥38,000～</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="ml-2 text-sm">4.8</span>
+                        </div>
+                        <span class="text-xs text-gray-500">945件</span>
+                    </div>
+                    <a href="gaming-headset.html#rank1" class="block w-full bg-orange-700 text-white text-center py-3 rounded-lg font-bold hover:bg-orange-600 transition">
+                        詳細レビューを見る
+                    </a>
+                </div>
+
+                <!-- ランキング4-6位（簡易版） -->
+                <div class="card-hover bg-gray-900 rounded-xl p-6 border border-purple-500/30">
+                    <div class="flex items-center mb-4">
+                        <div class="text-3xl font-bold text-purple-400 mr-4">4</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold">BenQ ZOWIE XL2546X</h3>
+                            <p class="text-sm text-gray-400">ゲーミングモニター 240Hz</p>
+                        </div>
+                        <i class="fas fa-desktop text-3xl text-green-400"></i>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="ml-1">4.7</span>
+                        </div>
+                        <a href="gaming-monitor.html" class="text-purple-400 hover:text-purple-300 text-sm font-bold">
+                            詳細 <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-gray-900 rounded-xl p-6 border border-purple-500/30">
+                    <div class="flex items-center mb-4">
+                        <div class="text-3xl font-bold text-purple-400 mr-4">5</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold">AKRacing Pro-X V2</h3>
+                            <p class="text-sm text-gray-400">ゲーミングチェア</p>
+                        </div>
+                        <i class="fas fa-chair text-3xl text-orange-400"></i>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="ml-1">4.6</span>
+                        </div>
+                        <a href="gaming-chair.html" class="text-purple-400 hover:text-purple-300 text-sm font-bold">
+                            詳細 <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-hover bg-gray-900 rounded-xl p-6 border border-purple-500/30">
+                    <div class="flex items-center mb-4">
+                        <div class="text-3xl font-bold text-purple-400 mr-4">6</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold">Razer Gigantus V2 XXL</h3>
+                            <p class="text-sm text-gray-400">デスクマット</p>
+                        </div>
+                        <i class="fas fa-square text-3xl text-cyan-400"></i>
+                    </div>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-sm">
+                            <i class="fas fa-star text-yellow-400"></i>
+                            <span class="ml-1">4.8</span>
+                        </div>
+                        <a href="gaming-mousepad.html" class="text-purple-400 hover:text-purple-300 text-sm font-bold">
+                            詳細 <i class="fas fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 最新レビューセクション -->
+    <section id="reviews" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center mb-4">
+                <span class="gradient-gaming bg-clip-text text-transparent">
+                    <i class="fas fa-newspaper mr-2"></i>最新レビュー記事
+                </span>
+            </h2>
+            <p class="text-center text-gray-400 mb-12">実機検証済みの詳細レビューをお届け</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <article class="card-hover bg-gray-800 rounded-xl overflow-hidden border border-purple-500/30">
+                    <div class="bg-purple-600 h-48 flex items-center justify-center">
+                        <i class="fas fa-mouse text-8xl text-white opacity-50"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-purple-600 text-xs px-3 py-1 rounded-full">マウス</span>
+                            <span class="text-xs text-gray-500">2024年12月更新</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">【2024年最新】FPS向けゲーミングマウスおすすめ15選</h3>
+                        <p class="text-gray-400 text-sm mb-4">Logicool、Razer、Finalmouseなど人気ブランドの最新モデルを徹底比較。重量、センサー、ポーリングレート別に詳しくレビュー。</p>
+                        <a href="gaming-mouse.html" class="text-purple-400 hover:text-purple-300 font-bold inline-flex items-center">
+                            記事を読む <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="card-hover bg-gray-800 rounded-xl overflow-hidden border border-purple-500/30">
+                    <div class="bg-pink-600 h-48 flex items-center justify-center">
+                        <i class="fas fa-keyboard text-8xl text-white opacity-50"></i>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-pink-600 text-xs px-3 py-1 rounded-full">キーボード</span>
+                            <span class="text-xs text-gray-500">2024年12月更新</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">ラピッドトリガー対応ゲーミングキーボード完全ガイド</h3>
+                        <p class="text-gray-400 text-sm mb-4">Valorant、Apex Legendsでの優位性が注目のラピッドトリガー技術。対応キーボードの選び方と性能比較。</p>
+                        <a href="gaming-keyboard.html" class="text-pink-400 hover:text-pink-300 font-bold inline-flex items-center">
+                            記事を読む <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTAセクション -->
+    <section class="py-20 bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">
+                最適なゲーミングセットアップを見つけよう
+            </h2>
+            <p class="text-xl text-gray-400 mb-8">
+                プロゲーマーも信頼するデバイス選びのプロが、あなたに最適なギアを提案します
+            </p>
+            <a href="#categories" class="inline-block px-10 py-4 gradient-gaming text-white rounded-lg font-bold text-lg hover:opacity-90 transition shadow-lg">
+                <i class="fas fa-search mr-2"></i>デバイスを探す
+            </a>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer class="bg-gray-900 border-t border-purple-500/30 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-gaming text-xl font-bold gradient-gaming bg-clip-text text-transparent mb-4">
+                        GameGear Masters
+                    </h3>
+                    <p class="text-gray-400 text-sm">
+                        ゲーミングデバイスの総合レビューサイト。最新情報と詳細な比較で、あなたの最適なギア選びをサポートします。
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">カテゴリー</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="gaming-mouse.html" class="hover:text-purple-400">ゲーミングマウス</a></li>
+                        <li><a href="gaming-keyboard.html" class="hover:text-purple-400">ゲーミングキーボード</a></li>
+                        <li><a href="gaming-headset.html" class="hover:text-purple-400">ゲーミングヘッドセット</a></li>
+                        <li><a href="gaming-monitor.html" class="hover:text-purple-400">ゲーミングモニター</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">人気ブランド</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-purple-400">Logicool G</a></li>
+                        <li><a href="#" class="hover:text-purple-400">Razer</a></li>
+                        <li><a href="#" class="hover:text-purple-400">SteelSeries</a></li>
+                        <li><a href="#" class="hover:text-purple-400">Corsair</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">サイト情報</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-purple-400">このサイトについて</a></li>
+                        <li><a href="#" class="hover:text-purple-400">レビューポリシー</a></li>
+                        <li><a href="#" class="hover:text-purple-400">プライバシーポリシー</a></li>
+                        <li><a href="#" class="hover:text-purple-400">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 GameGear Masters. All rights reserved.</p>
+                <p class="mt-2">※ 当サイトはアフィリエイトプログラムを利用しています</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- トップへ戻るボタン -->
+    <button id="scroll-to-top" class="hidden fixed bottom-8 right-8 bg-purple-600 hover:bg-purple-700 text-white w-12 h-12 rounded-full items-center justify-center shadow-lg transition z-50" aria-label="トップへ戻る">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
